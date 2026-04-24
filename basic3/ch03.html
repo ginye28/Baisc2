@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class Student {
+
+                constructor() {
+                    console.log("생성자 호출!!!");
+                }
+            }
+
+            const s1 = new Student();
+            const s2 = new Student();
+
+            console.log(typeof s1);
+            console.log(s1 === s2);
+
+            const s3 = {};
+            const s4 = {};
+            console.log(typeof s3);
+            console.log(s3 === s4);
+
+            s1.name = "진혜정";
+            console.log(s1.name);
+            s3.name = "진혜정";
+            console.log(s3.name);
+            s2["name"] = "비긴혜정";
+            console.log(s2.name);
+            console.log(s2["name"]);
+
+            const key = "name";
+            console.log(s1[key]);
+            const datas = {
+                names: ["진혜정", "이긴혜정"],
+                ages: [21, 22],
+                a: () => {
+                    console.log(datas.names);
+                    console.log(datas.ages);
+                }
+            }
+
+            console.log(datas["names"][0]);
+            datas.a();
+
+            const datas2 = datas;   //얕은 복사
+            console.log(datas === datas2);
+            const datas3 = {...datas};
+            console.log(datas === datas3);
+        </script>
+    </body>
+</html>
