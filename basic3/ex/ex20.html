@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 여기에 코드를 작성하세요
+            function stats(...params) {
+                console.log(params)
+                
+                return {
+                    sum: 0, 
+                    avg: 0,
+                };
+
+                for (let i = 0; i < params.length; i++) {
+                    result.sum += params[i];
+                }
+
+                result.avg = result.sum / params.length;
+            }
+
+            console.log(stats(10, 20, 30));        // { sum: 60, avg: 20 }
+        </script>
+    </body>
+</html>
